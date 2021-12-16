@@ -12,4 +12,12 @@ export class CourseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  titleCourse = "List of course";
+  courseList = ['Java', 'Angular','Groovy', 'php'];
+  getTitle(){
+   return this.titleCourse;
+  }
+  getListOfCourese(){
+    return this.courseList;
+  }
 }
