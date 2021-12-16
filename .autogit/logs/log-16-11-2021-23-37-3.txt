@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Thu Dec 16 2021 23:37:03 GMT+0800 (Australian Western Standard Time)
+------------------------------------------------------
+
+Modified files:
+* angular-application/src/app/course/course.component.html
+* angular-application/src/app/course/course.component.ts
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
