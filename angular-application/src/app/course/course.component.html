@@ -5,4 +5,10 @@
         {{courseValue}}
     </li>
 </ul>
-<button class="btn" [style.backgroundColor]="isActive ? 'red':'green'" (click)="onSave($event)"> Save</button>
+<div (click)="onDivClick()">
+    <input #email (keyup.enter)="onEnterValue(email.value)"/>
+    <input [(ngModel)]="twoWayBinding" (keyup.enter)="ontwoWayBinding()"/>
+<button class="btn" [style.backgroundColor]="isActive ? 'red':'green'" (click)="onSave($event)">
+     Save</button>
+
+</div>

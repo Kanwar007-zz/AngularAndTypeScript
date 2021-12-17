@@ -7,15 +7,12 @@ import { CourseService } from '../services/services/course.service';
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css']
 })
-export class CourseComponent implements OnInit {
+export class CourseComponent  {
   courseList
   constructor(service: CourseService) {
     this.courseList =service.getListOfCourese();
    }
-
-  ngOnInit(): void {
-  }
-
+  twoWayBinding="vijay@vijay";
   titleCourse = "List of course";
   isActive= false;
   
@@ -23,10 +20,17 @@ export class CourseComponent implements OnInit {
    return this.titleCourse;
   }
   onSave($event){
+    $event.stopPropagation();
     console.log('click on on save button',$event)
   }
   onDivClick(){
     console.log('div was click ');
+  }
+  onEnterValue(email){
+    console.log('Enter value is ',email);
+  }
+  ontwoWayBinding(){
+    console.log(this.twoWayBinding);
   }
   
 }
