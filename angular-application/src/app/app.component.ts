@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-Application';
+  post = {
+    title: "Title",
+    isFavorite : true
+  }
+  onChangeValue(){
+    console.log("change event Value ");
+  }
 }

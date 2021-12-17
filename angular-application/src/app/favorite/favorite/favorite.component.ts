@@ -14,6 +14,6 @@ export class FavoriteComponent implements OnInit {
   }
 
   onclick(){
-    console.log('value to display using favorite component');
+    this.isFavorite =!this.isFavorite
   }
 }

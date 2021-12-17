@@ -24,4 +24,5 @@ import { FavoriteComponent } from './favorite/favorite/favorite.component';
   providers: [CourseService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}
