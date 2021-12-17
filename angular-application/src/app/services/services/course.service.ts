@@ -15,7 +15,13 @@ export class CourseService {
     price:20.00,
     copyright:"Angular kanwar"
  }
+ course3={
+  name:"Groovy",
+  student:33,
+  price:14.00,
+  copyright:"Groovy kanwar"
+}
   getListOfCourese(){
-    return ['Java', 'Angular','Groovy', 'php'];
+    return [this.course1,this.course2,this.course3];
   }
 }
