@@ -17,9 +17,16 @@ export class CourseComponent implements OnInit {
   }
 
   titleCourse = "List of course";
+  isActive= false;
   
   getTitle(){
    return this.titleCourse;
+  }
+  onSave($event){
+    console.log('click on on save button',$event)
+  }
+  onDivClick(){
+    console.log('div was click ');
   }
   
 }
