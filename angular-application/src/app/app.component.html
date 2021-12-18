@@ -310,6 +310,16 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <app-favorite [isFavorite]="post.isFavorite" (change)="onChangeValue()"></app-favorite>
+<app-panel>
+  <div class="heading">Heading</div>
+  <div class="body">
+    <h1>
+      Body 
+    </h1>
+    <p> some content start here .....</p>
+  </div>
+</app-panel>
+
 <app-course></app-course>
 
 <router-outlet></router-outlet>
