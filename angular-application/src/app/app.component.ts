@@ -11,6 +11,7 @@ export class AppComponent {
     title: "Title",
     isFavorite : true
   }
+  viewTab= "map";
   onChangeValue(){
     console.log("change event Value ");
   }
