@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { post } from '../post/post/posts';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +12,8 @@ export class PostserService {
 
    }
    urlValue = "https://jsonplaceholder.typicode.com/posts";
-    getPostValue () : any {
-     this.Http.get(this.urlValue,{responseType: 'json'}).subscribe(
-        response => {
-          console.log(response)
-          return response
-        }
-      );
+    getPostValue () : Observable<any> {
+     return this.Http.get(this.urlValue)
    }
 
 }
