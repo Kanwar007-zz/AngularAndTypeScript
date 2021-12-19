@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { SummaryPipe } from './pipe/summary.pipe';
 import { FavoriteComponent } from './favorite/favorite/favorite.component';
 import { PanelComponent } from './panel/panel/panel.component';
 import { AddedDirective } from './directive/added.directive';
+import { PostComponent } from './post/post/post.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { AddedDirective } from './directive/added.directive';
     SummaryPipe,
     FavoriteComponent,
     PanelComponent,
-    AddedDirective
+    AddedDirective,
+    PostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [CourseService],
   bootstrap: [AppComponent]
