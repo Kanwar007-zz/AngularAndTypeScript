@@ -9,12 +9,11 @@ import { post } from './posts';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  posts : post
+  posts : post []
   constructor(private postService : PostserService) { 
     postService.getPostValue().subscribe(
       (response) => {                           //next() callback
         console.log('response received')
-       alert(response)
         this.posts = response; 
       }
       )

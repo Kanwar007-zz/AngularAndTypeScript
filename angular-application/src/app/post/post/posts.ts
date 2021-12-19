@@ -1,6 +1,6 @@
 
 export class post{
-  userid:number
-  id:number
+  userId:string
+  id:string
   title:string
 }
