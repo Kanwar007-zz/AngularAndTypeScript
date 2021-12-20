@@ -12,6 +12,7 @@ import { FavoriteComponent } from './favorite/favorite/favorite.component';
 import { PanelComponent } from './panel/panel/panel.component';
 import { AddedDirective } from './directive/added.directive';
 import { PostComponent } from './post/post/post.component';
+import { PersondemoComponent } from './person/persondemo/persondemo.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PostComponent } from './post/post/post.component';
     FavoriteComponent,
     PanelComponent,
     AddedDirective,
-    PostComponent
+    PostComponent,
+    PersondemoComponent
   ],
   imports: [
     BrowserModule,
