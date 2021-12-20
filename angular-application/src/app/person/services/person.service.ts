@@ -19,9 +19,10 @@ export class PersonService {
      const header = { 'content-type': 'application/json'} ;
      return this.http.post(this.baseURL +'people',JSON.stringify(person),{'headers':header});
    }
-   update(person:Person){
+   update(person:Person):Observable<Person>{
      console.log(JSON.stringify(Person.name))
-      this.http.put(this.baseURL+'people/'+person.id,JSON.stringify(person)).subscribe();
+     const header = { 'content-type': 'application/json'} ;
+      return this.http.put<Person>(this.baseURL+'people/'+person.id,JSON.stringify(person),{'headers':header});
    }
    deletePerson(person:Person){
       // this.http.delete(this.baseURL+'people/'+person.id).subscribe(
