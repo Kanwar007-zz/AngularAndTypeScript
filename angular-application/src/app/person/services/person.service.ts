@@ -11,6 +11,10 @@ export class PersonService {
   constructor(private http : HttpClient) { }
 
    getPeople(): Observable<Person[]>{
-     return this.http.get<Person[]>(this.baseURL+'person');
+     return this.http.get<Person[]>(this.baseURL+'people');
+   }
+   create(person: Person):Observable<any>{
+     const header = { 'content-type': 'application/json'} ;
+     return this.http.post(this.baseURL +'people',JSON.stringify(person),{'headers':header})
    }
 }

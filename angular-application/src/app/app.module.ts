@@ -13,6 +13,7 @@ import { PanelComponent } from './panel/panel/panel.component';
 import { AddedDirective } from './directive/added.directive';
 import { PostComponent } from './post/post/post.component';
 import { PersondemoComponent } from './person/persondemo/persondemo.component';
+import { PersonService } from './person/services/person.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { PersondemoComponent } from './person/persondemo/persondemo.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [CourseService],
+  providers: [CourseService,PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

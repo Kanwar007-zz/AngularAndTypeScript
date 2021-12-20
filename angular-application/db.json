@@ -16,17 +16,22 @@
   "profile": {
     "name": "typicode"
   },
-
-    "people": [
-      {
-        "id": 1,
-        "name": "Don Bradman"
-      },
-      {
-        "id": 2,
-        "name": "Sachin Tendulkar"
-      }
-    ]
-  
-
+  "people": [
+    {
+      "id": 1,
+      "name": "Don Bradman"
+    },
+    {
+      "id": 2,
+      "name": "Sachin Tendulkar"
+    },
+    {
+      "name": "vijay",
+      "id": 3
+    },
+    {
+      "name": "kanwar",
+      "id": 4
+    }
+  ]
 }

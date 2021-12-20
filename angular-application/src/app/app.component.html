@@ -19,7 +19,7 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<!--
 <ul class="nav nav-pills">
   <li [class.active]="viewTab== 'map'"><a (click)="viewTab='map'"> Map view </a></li>
   <li [class.active]="viewTab== 'list'"> <a (click)="viewTab='list'"> List View</a></li>
@@ -40,9 +40,10 @@
   </div>
 </app-panel>
 <div>
-  <!--<input type="text" appAdded [format]="'uppercase'">-->
-  <input type="text" [appAdded]= "'uppercase'"/>
+<input type="text" appAdded [format]="'uppercase'">-->
+ <!-- <input type="text" [appAdded]= "'uppercase'"/>
 </div>
 <app-course></app-course>
-<app-post> post request </app-post>
+<app-post> post request </app-post> -->
+<app-persondemo></app-persondemo>
 <router-outlet></router-outlet>
