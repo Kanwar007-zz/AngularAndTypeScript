@@ -36,6 +36,8 @@ this.personService.create(this.person).subscribe(
      }
      updatePerson(person:Person){
        console.log("update"+person.name);
+       this.personService.update(person);
+       this.refreshTab();
      }
      removePerson(person:Person){
       console.log("update"+person.name);

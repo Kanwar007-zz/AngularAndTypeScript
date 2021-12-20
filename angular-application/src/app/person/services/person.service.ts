@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Person } from '../persondemo/person';
+import { logging } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,14 @@ export class PersonService {
      return this.http.post(this.baseURL +'people',JSON.stringify(person),{'headers':header});
    }
    update(person:Person):Observable<any>{
-     return this.http.put(this.baseURL+'people',JSON.stringify(Person));
+     console.log(JSON.stringify(Person.name))
+     return this.http.put(this.baseURL+'people/'+person.id,person.name);
    }
-   deletePerson(person:Person):Observable<any>{
-    return this.http.delete(this.baseURL+'people?'+person.id);
+   deletePerson(person:Person){
+       this.http.delete(this.baseURL+'people/'+person.id).subscribe(
+      data => {
+        console.log(data);
+      }
+    );
   }
 }

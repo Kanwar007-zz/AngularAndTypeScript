@@ -21,7 +21,7 @@
       <tr *ngFor="let person of people;">
         <td>{{person.id}}</td>
         <td>{{person.name}}</td>
-        <td> <button (click)="updatePerson(person)">Update</button></td>
+        <td> <input [(ngModel)]="person.name" /> <button (click)="updatePerson(person)">Update</button></td>
         <td> <button (click)="removePerson(person)">Removed</button></td>
       </tr>
     </tbody>
