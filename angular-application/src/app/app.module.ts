@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { AddedDirective } from './directive/added.directive';
 import { PostComponent } from './post/post/post.component';
 import { PersondemoComponent } from './person/persondemo/persondemo.component';
 import { PersonService } from './person/services/person.service';
+import { GlobalHttpInterceptorService } from './services/global-http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,12 @@ import { PersonService } from './person/services/person.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [CourseService,PersonService],
+  providers: [CourseService,PersonService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GlobalHttpInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

@@ -15,6 +15,6 @@ export class PersonService {
    }
    create(person: Person):Observable<any>{
      const header = { 'content-type': 'application/json'} ;
-     return this.http.post(this.baseURL +'people',JSON.stringify(person),{'headers':header})
+     return this.http.post(this.baseURL +'people',JSON.stringify(person),{'headers':header});
    }
 }
