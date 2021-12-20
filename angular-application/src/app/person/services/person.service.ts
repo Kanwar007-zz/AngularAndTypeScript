@@ -17,4 +17,10 @@ export class PersonService {
      const header = { 'content-type': 'application/json'} ;
      return this.http.post(this.baseURL +'people',JSON.stringify(person),{'headers':header});
    }
+   update(person:Person):Observable<any>{
+     return this.http.put(this.baseURL+'people',JSON.stringify(Person));
+   }
+   deletePerson(person:Person):Observable<any>{
+    return this.http.delete(this.baseURL+'people?'+person.id);
+  }
 }

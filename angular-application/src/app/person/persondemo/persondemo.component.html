@@ -13,12 +13,16 @@
       <tr>
         <th>ID</th>
         <th>Name</th>
+        <th> Update</th>
+        <th> Remove </th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let person of people;">
         <td>{{person.id}}</td>
         <td>{{person.name}}</td>
+        <td> <button (click)="updatePerson(person)">Update</button></td>
+        <td> <button (click)="removePerson(person)">Removed</button></td>
       </tr>
     </tbody>
   </table>

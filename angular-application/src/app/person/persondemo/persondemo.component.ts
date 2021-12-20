@@ -33,7 +33,15 @@ this.personService.create(this.person).subscribe(
     console.log(data);
     this.refreshTab();
   } );
-  
+     }
+     updatePerson(person:Person){
+       console.log("update"+person.name);
+     }
+     removePerson(person:Person){
+      console.log("update"+person.name);
+      this.personService.deletePerson(person);
+      this.refreshTab();
+
      }
   }
 
