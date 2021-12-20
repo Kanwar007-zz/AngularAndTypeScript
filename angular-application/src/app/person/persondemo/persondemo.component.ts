@@ -1,3 +1,4 @@
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { PersonService } from '../services/person.service';
 import { Person } from './person';
@@ -21,7 +22,9 @@ export class PersondemoComponent implements OnInit {
      data => {
        console.log(data);
       this.people = data;
-     }
+     } ,error=>{
+      alert("error")
+    }
    );
   }
   refreshTab(){
@@ -32,12 +35,14 @@ this.personService.create(this.person).subscribe(
   data =>{
     console.log(data);
     this.refreshTab();
-  } );
+  } ,error=>{
+    alert("error")
+  });
      }
      updatePerson(person:Person){
        console.log("update"+person.name);
        this.personService.update(person);
-       this.refreshTab();
+       
      }
      removePerson(person:Person){
       console.log("update"+person.name);

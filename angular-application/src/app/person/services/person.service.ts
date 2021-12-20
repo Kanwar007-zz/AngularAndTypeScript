@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Person } from '../persondemo/person';
 import { logging } from 'protractor';
+import { error } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +19,22 @@ export class PersonService {
      const header = { 'content-type': 'application/json'} ;
      return this.http.post(this.baseURL +'people',JSON.stringify(person),{'headers':header});
    }
-   update(person:Person):Observable<any>{
+   update(person:Person){
      console.log(JSON.stringify(Person.name))
-     return this.http.put(this.baseURL+'people/'+person.id,person.name);
+      this.http.put(this.baseURL+'people/'+person.id,JSON.stringify(person)).subscribe();
    }
    deletePerson(person:Person){
-       this.http.delete(this.baseURL+'people/'+person.id).subscribe(
+      // this.http.delete(this.baseURL+'people/'+person.id).subscribe(
+        this.http.delete(this.baseURL+'people/'+"222").subscribe(
       data => {
         console.log(data);
+      },(error:Response)=>{
+        if(error.status == 404){
+alert("another error 404  ")
+        }else{
+alert("else error")
+        }
+
       }
     );
   }
