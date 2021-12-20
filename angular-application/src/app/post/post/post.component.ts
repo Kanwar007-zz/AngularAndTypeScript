@@ -8,7 +8,7 @@ import { post } from './posts';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent {
   posts : post []
   constructor(private postService : PostserService) { 
     postService.getPostValue().subscribe(
@@ -19,11 +19,23 @@ export class PostComponent implements OnInit {
       )
    
   }
-
-  ngOnInit(): void {
-    
+  refreshPostList(){
+    this.postService.getPostValue().subscribe(
+      (response) => {                           //next() callback
+        console.log('response received')
+        this.posts = response; 
+      }
+      )
   }
-
+createPost(postNew:HTMLInputElement){
+  this.postService.createPostValue(postNew).subscribe(
+    response =>{
+      console.log(response)
+      this.refreshPostList();
+    }
+  )
+}
+ 
 
 
 

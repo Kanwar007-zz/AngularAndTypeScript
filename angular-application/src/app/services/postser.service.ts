@@ -7,16 +7,21 @@ import { post } from '../post/post/posts';
   providedIn: 'root'
 })
 export class PostserService {
-  
+  private  urlValue = "https://jsonplaceholder.typicode.com/posts"
   constructor(private Http: HttpClient) {
 
    }
    
    headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
-   urlValue = "https://jsonplaceholder.typicode.com/posts";
+  ;
     getPostValue () : Observable<post[]> {
      return this.Http.get<post[]>(this.urlValue, {'headers': this.headers})
    }
+   createPostValue(postValue : HTMLInputElement) : Observable<any>{
+    let body=JSON.stringify(postValue.value);
+    console.log(body)
+     return this.Http.post(this.urlValue, body);
+   } 
 
 }
