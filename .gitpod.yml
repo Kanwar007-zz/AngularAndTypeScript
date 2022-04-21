@@ -2,7 +2,7 @@
 tasks:
   - name: test angular
     before: |
-      cd angular-applicaiton 
+      cd angular-application 
     init: echo 'init script' # runs during prebuild
     command: npm start
 
